@@ -14,7 +14,6 @@ Advanced Web Automation Framework for building testcases and generating intresti
 
 ## Reporting
 
-Insert gif or link to demo
 
 
 ![image](https://drive.google.com/uc?export=view&id=1I6QbkmG6mDaoRIxIxoA3fyVVMQWNLZzU)

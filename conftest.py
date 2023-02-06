@@ -79,3 +79,6 @@ def driver(request):
     # sleep(180)
     driver.close()
     driver.quit()
+
+
+# pytest Tests --alluredir=reports --screenshot=on --browser CHROME  -v -s --headless 0

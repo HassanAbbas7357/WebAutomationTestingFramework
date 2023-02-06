@@ -21,7 +21,7 @@ from webdriver_manager.opera import OperaDriverManager
 from selenium.webdriver.common.keys import Keys
 
 
-@allure.step("finding the element")
+@allure.step("finding the element {0}")
 def find_byXpath(xpath, driver):
     try:
         ele = driver.find_element(By.XPATH, xpath)
@@ -34,7 +34,7 @@ def find_byXpath(xpath, driver):
             f"Couldn't find element with selector with xpath : {xpath}")
 
 
-@allure.step("finding the element")
+@allure.step("finding the element {0}")
 def find_byXpathAndWait(xpath, driver):
     try:
         ele = WebDriverWait(driver, 7).until(
@@ -50,7 +50,7 @@ def find_byXpathAndWait(xpath, driver):
             f"Couldn't find element with selector with xpath : {xpath}")
 
 
-@allure.step("finding the elements")
+@allure.step("finding the elements {0}")
 def find_Elements_byXpath(xpath, driver):
     try:
         ele = driver.find_elements(By.XPATH, xpath)

@@ -1,0 +1,4 @@
+pytest
+allure-pytest
+selenium
+webdriver-manager

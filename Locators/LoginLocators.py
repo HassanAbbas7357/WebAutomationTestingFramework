@@ -1,0 +1,11 @@
+
+email_xpath = '//input[@placeholder="Enter Email"]'
+password_xpath = '//input[@placeholder="Enter Password"]'
+LoginBtn_xpath = '//button[text()="Sign in"]'
+Dashboard_Xpath = '//a[text()="Dashboard"]/parent::li'
+Forgetpassword_xpath = '//a[text()="Forgot your Password?"]'
+welcomeMessage_xpath = '//h1[text()="Welkom bij Veritec"]'
+loginErrorMessage_xpath = '//span[text()="Email Address Or Password Invalid"]'
+EmptyEmailCredentialError_xpath = '//div[text()="Please Enter Your Email!"]'
+EmptyPasswordCredentialError_xpath = '//div[text()="Please Enter Your Password!"]'
+InvalidEmailMessage_xpath = '//div[text()="The input is not valid E-mail!"]'

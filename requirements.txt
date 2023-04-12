@@ -2,5 +2,13 @@ pytest
 allure-pytest
 selenium
 webdriver-manager
-pytest-failed-screenshot
 pytest-xdist
+pytest-order
+pytest-rerunfailures
+requests
+certifi
+trio
+trio-websocket
+urllib3
+flaky
+pandas

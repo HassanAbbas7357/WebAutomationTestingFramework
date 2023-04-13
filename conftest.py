@@ -88,7 +88,7 @@ def driver(request):
     driver = None
 
     if request.config.option.headless == "1":
-        headless = "--headless"
+        headless = "--headless=new"
     else:
         headless = "headfull"
 
@@ -101,12 +101,25 @@ def driver(request):
             "profile.default_content_setting_values.notifications": 1,
             "download.default_directory": downloadsPath,
             "download.prompt_for_download": False,
-            # "download.directory_upgrade": False,
-            # "safebrowsing.enabled": True
+            "download.directory_upgrade": True,
+            "safebrowsing_for_trusted_sources_enabled": False,
+            "safebrowsing.enabled": False,
+            'behavior': 'allow'
         })
+        # chrome_options.add_argument("--no-sandbox")
+        # chrome_options.add_argument("--disable-dev-shm-usage")
+        # chrome_options.add_argument("--headless=new")
+        # chrome_options.add_argument("window-size=1920,1080")
+        # chrome_options.add_experimental_option("prefs", {
+        #     "download.default_directory": downloadsPath,
+        #     "download.prompt_for_download": False,
+        #     "download.directory_upgrade": True,
+        #     "safebrowsing.enabled": True,
+        #     "DOWNLOADS_PATH": downloadsPath
+        # })
 
         driver = webdriver.Chrome(
-            ChromeDriverManager().install(), chrome_options=chrome_options, )
+            ChromeDriverManager().install(), chrome_options=chrome_options)
 
     elif BROWSER == "FIREFOX":
         firefox_options = Firefox_options()

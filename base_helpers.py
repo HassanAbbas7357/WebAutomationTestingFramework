@@ -200,6 +200,7 @@ def replace_string(input_string):
 def verify_Data_TableCell(driver, listxpathAtrr, tableIndex=0):
     for xpathAtrr in listxpathAtrr:
         NameXpath = TableRow_xpath(xpathAtrr, tableIndex)
+        print(NameXpath)
         assert find_byXpathAndGet_text(NameXpath, driver) == xpathAtrr
         print(f'Data Found {xpathAtrr}')
 

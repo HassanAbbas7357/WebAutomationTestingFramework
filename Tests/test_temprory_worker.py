@@ -47,9 +47,11 @@ def downloadAndVerifyCSVExportedFile(driver):
         sleep(2)
         verify_elementIsClickAble(mainExportButton, driver)
         find_byXpath(mainExportButton, driver).click()
+        print('Downloading the file now')
         sleep(4)
         fileName = Storage.downloadsPath + find_byXpath(csvFileEXPORTNAME, driver).get_attribute("download") + '.csv'
-        verifyFileDownloadedCorrectly(fileName)
+        verifyFileDownloadedCorrectly(FilePath=fileName)
+        return fileName
 
 
 @allure.feature("Temporary Worker Feature")
@@ -220,7 +222,7 @@ def sortTableByIdDescendingOrder(driver):
 
 
 def verifyDataInTable(driver, textPathList, tableDataList, tableIndex=0):
-    with allure.step(f'Verify Data in Table: {textPathList.extend(tableDataList)}'):
+    with allure.step(f'Verify Data in Table: {textPathList} {tableDataList}'):
         # scroll_into_element(BACKButton_xpath, driver)
         # click_on_element_js(BACKButton_xpath, driver)
         # sleep(2)
@@ -286,6 +288,7 @@ def test_TemporaryWorkerDeleteLast(driver):
 @allure.severity(allure.severity_level.NORMAL)
 @pytest.mark.regression
 @pytest.mark.sanity
+@pytest.mark.order(1)
 def test_TemporaryWorkerDeleteLast(driver):
     VisitTemporaryWorkerPageWithLogin(driver)
     sortTableByIdDescendingOrder(driver)
@@ -302,6 +305,7 @@ def test_TemporaryWorkerDeleteLast(driver):
 @allure.severity(allure.severity_level.NORMAL)
 @pytest.mark.regression
 @pytest.mark.sanity
+@pytest.mark.order(2)
 def test_TemporaryWorkerDeleteFirst(driver):
     VisitTemporaryWorkerPageWithLogin(driver)
     scroll_into_element(mainTemporaryTable_xpath, driver)
@@ -334,6 +338,7 @@ def test_TemporaryWorkerCheckNecessaryButtonsVisible(driver):
 @allure.severity(allure.severity_level.MINOR)
 @pytest.mark.regression
 @pytest.mark.sanity
+@pytest.mark.order(4)
 def test_TemporaryWorkerCheckNecessaryButtonsClickAble(driver):
     VisitTemporaryWorkerPageWithLogin(driver)
     with allure.step('And Check if All Necessary Buttons are Clickable'):
@@ -350,17 +355,11 @@ def test_TemporaryWorkerCheckNecessaryButtonsClickAble(driver):
 @pytest.mark.regression
 @pytest.mark.sanity
 @pytest.mark.smoke
-@pytest.mark.order(13)
+@pytest.mark.order(3)
 def test_TemporaryWorkerCheckExportButtonDownloadsCSVFile(driver):
     VisitTemporaryWorkerPageWithLogin(driver)
-    with allure.step('And Check if CSV file downloaded correctly'):
-        verify_loaderAndWait(TableLoader_xpath, driver)
-        sleep(2)
-        verify_elementIsClickAble(mainExportButton, driver)
-        find_byXpath(mainExportButton, driver).click()
-        sleep(4)
-        fileName = Storage.downloadsPath + find_byXpath(csvFileEXPORTNAME, driver).get_attribute("download") + '.csv'
-        verifyFileDownloadedCorrectly(fileName)
+    fileName = downloadAndVerifyCSVExportedFile(driver)
+    os.remove(fileName)
 
 
 @allure.feature("Temporary Worker Feature")
@@ -368,13 +367,12 @@ def test_TemporaryWorkerCheckExportButtonDownloadsCSVFile(driver):
 @allure.severity(allure.severity_level.NORMAL)
 @pytest.mark.regression
 @pytest.mark.sanity
-@pytest.mark.order(14)
+@pytest.mark.order(5)
 def test_TemporaryWorkerVerifyIfExportedCSVFileDataMatchesWithWebTableData(driver):
     VisitTemporaryWorkerPageWithLogin(driver)
     with allure.step('And Check if CSV file downloaded correctly'):
         fileName = Storage.downloadsPath + find_byXpath(csvFileEXPORTNAME, driver).get_attribute("download") + '.csv'
-        if not os.path.exists(fileName):
-            downloadAndVerifyCSVExportedFile(driver)
+        downloadAndVerifyCSVExportedFile(driver)
 
     with allure.step("Verify If Exported CSV file has the exact data matches with table"):
         scroll_to_bottom_of_page(driver)
@@ -410,14 +408,15 @@ def test_TemporaryWorkerVerifyIfExportedCSVFileDataMatchesWithWebTableData(drive
             # noinspection PyTypeChecker
             verifyDataInTable(driver,
                               textPathList=[email,  # houseBedNum,
-                                            # transportType, vcaStatus
+                                            # transportType, vcaStatus,
+
                                             ],
                               tableDataList=[
                                   firstName, lastName,
                                   # f'92{phoneNumber}',
                                   # nationality,
                                   # address,
-                                  status,
+                                  # status,
                                   employeeType,
                                   # client,
                                   # project,

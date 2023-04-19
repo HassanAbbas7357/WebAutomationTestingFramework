@@ -19,36 +19,19 @@ jobs:
       - name: Install dependencies from Requirements.txt
         run: pip install -r requirements.txt
         
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-          distribution: 'adopt'
+
         
 
-      - name: Install Allure
-        run: |
-          wget -O allure-2.15.0.tgz https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.15.0/allure-commandline-2.15.0.tgz
-          tar -zxvf allure-2.15.0.tgz -C /opt/
-          export PATH=$PATH:/opt/allure-2.15.0/bin
+#       - name: Install Allure
+#         run: |
+#           wget -O allure-2.15.0.tgz https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.15.0/allure-commandline-2.15.0.tgz
+#           tar -zxvf allure-2.15.0.tgz -C /opt/
+#           export PATH=$PATH:/opt/allure-2.15.0/bin
 
       
       - name: Running Selenium Tests
         run:  pytest --alluredir=allure-results --browser CHROME --headless 1 -v -s -m smoke
         continue-on-error: true
-
-#       - name: Allure report
-#         # You may pin to the exact commit or the version.
-#         # uses: afiore/action-allure-report@e43ebd6f4f4c74b07b1eb02f042902bbe6786a19
-#         uses: afiore/action-allure-report@v0.1.0
-#         with:
-#           # Allure test result data dir
-#           results-dir: allure-results
-#           # Allure report target dir
-#           report-dir: allure-report
-
-
-
 
       - name: Get Allure history
         uses: actions/checkout@v2

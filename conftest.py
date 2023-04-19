@@ -76,15 +76,14 @@ class Storage:
 
 @pytest.fixture(scope='function')
 def driver(request):
-    for file_or_dir in os.listdir(os.getcwd()):
-        print(file_or_dir)
-    
     print("CURRENTWORKINGDIRECTORY :", os.getcwd())
     downloadsPath = os.getcwd() + '/Downloads/'
     if os.path.exists(downloadsPath):
         print("Path Exists : ", downloadsPath)
     else:
         print("Path Doesn't Exists:", downloadsPath)
+        os.mkdir(downloadsPath)
+        print(os.path.exists(downloadsPath))
     print("FileDownloadDIRECTORY : ", downloadsPath)
     print(request.config.option.browser)
     BROWSER = request.config.option.browser

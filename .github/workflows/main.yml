@@ -1,4 +1,4 @@
-name: Setup & Run Selenium Test
+name: Setup & Run Selenium Tests
 on: [push]
 
 jobs:

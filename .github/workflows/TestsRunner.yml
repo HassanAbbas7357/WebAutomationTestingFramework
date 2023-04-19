@@ -28,8 +28,10 @@ jobs:
 #           tar -zxvf allure-2.15.0.tgz -C /opt/
 #           export PATH=$PATH:/opt/allure-2.15.0/bin
 
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v1.2.0
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: 'stable'
 
 
       

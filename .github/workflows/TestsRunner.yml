@@ -30,7 +30,7 @@ jobs:
 
       
       - name: Running Selenium Tests
-        run:  pytest --alluredir=allure-results --browser CHROME --headless 1 -v -s -m smoke
+        run:  pytest --alluredir=allure-results --browser CHROME --headless 1
         continue-on-error: true
 
       - name: Get Allure history

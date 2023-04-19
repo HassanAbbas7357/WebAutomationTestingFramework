@@ -28,9 +28,13 @@ jobs:
 #           tar -zxvf allure-2.15.0.tgz -C /opt/
 #           export PATH=$PATH:/opt/allure-2.15.0/bin
 
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1.2.0
+
+
       
       - name: Running Selenium Tests
-        run:  pytest --alluredir=allure-results --browser FIREFOX --headless 1 --reruns 2 -n auto
+        run:  pytest --alluredir=allure-results --browser CHROME --headless 1 --reruns 2 -n auto
         continue-on-error: true
 
       - name: Get Allure history

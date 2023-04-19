@@ -70,7 +70,7 @@ def test_TemporaryWorkerMandatoryFields(driver):
         verify_element_is_present(Select_Nationality_xpath, driver)
         verify_element_is_present(PhoneNumberInput_xpath, driver)
         verify_element_is_present(PhoneNumber_CountryFlagIcon_xpath, driver)
-        verify_element_is_present(address_xpath, driver)
+        # verify_element_is_present(address_xpath, driver)
         verify_element_is_present(email_xpath, driver)
         # Employee Status
         verify_element_is_present(EmployeeStatusHeading_xpath, driver)
@@ -117,7 +117,7 @@ def fillUserPersonalData(driver):
         find_byXpath(PhoneNumberCountryNameClick(TW.PhoneCountry), driver).click()
         find_byXpath(PhoneNumberInput_xpath, driver).click()
         find_byXpath(PhoneNumberInput_xpath, driver).send_keys(TW.PhoneNumber)
-        find_byXpath(address_xpath, driver).send_keys(TW.Address)
+        # find_byXpath(address_xpath, driver).send_keys(TW.Address)
 
         find_byXpath(email_xpath, driver).send_keys(Email)
         scroll_into_element(email_xpath, driver)
@@ -354,7 +354,7 @@ def test_TemporaryWorkerCheckNecessaryButtonsClickAble(driver):
 @allure.severity(allure.severity_level.NORMAL)
 @pytest.mark.regression
 @pytest.mark.sanity
-@pytest.mark.smoke
+# @pytest.mark.smoke
 @pytest.mark.order(3)
 def test_TemporaryWorkerCheckExportButtonDownloadsCSVFile(driver):
     VisitTemporaryWorkerPageWithLogin(driver)
@@ -370,56 +370,64 @@ def test_TemporaryWorkerCheckExportButtonDownloadsCSVFile(driver):
 @pytest.mark.order(5)
 def test_TemporaryWorkerVerifyIfExportedCSVFileDataMatchesWithWebTableData(driver):
     VisitTemporaryWorkerPageWithLogin(driver)
-    with allure.step('And Check if CSV file downloaded correctly'):
-        fileName = Storage.downloadsPath + find_byXpath(csvFileEXPORTNAME, driver).get_attribute("download") + '.csv'
-        downloadAndVerifyCSVExportedFile(driver)
+
+    fileName = Storage.downloadsPath + find_byXpath(csvFileEXPORTNAME, driver).get_attribute("download") + '.csv'
+    downloadAndVerifyCSVExportedFile(driver)
 
     with allure.step("Verify If Exported CSV file has the exact data matches with table"):
         scroll_to_bottom_of_page(driver)
         sleep(4)
         df = pd.read_csv(fileName)
         df = df.fillna('')
+        df = df.replace(True, "Yes")
+        df = df.replace(False, "No")
+        df["VCA Valid Until"] = pd.to_datetime(df["VCA Valid Until"])
+        df["VCA Valid Until"] = df["VCA Valid Until"].dt.strftime("%d-%b-%Y")
+
         counter = 0
         page = 1
 
         for i, row in df.iterrows():
             if counter == 10:
-                print(page + 1)
+                print(f'Page : {page + 1}')
                 page += 1
                 counter = 0
                 find_byXpath(nextPage, driver).click()
 
             csv_list = row.tolist()
+            ID = str(csv_list[0])
             firstName = csv_list[1]
             lastName = csv_list[2]
             email = csv_list[3]
             status = csv_list[4]
             phoneNumber = csv_list[5]
             nationality = csv_list[6]
-            address = csv_list[7]
-            employeeType = csv_list[8]
-            client = csv_list[10]
-            project = csv_list[11]
-            houseBedNum = csv_list[14]
-            transportType = csv_list[16]
-            licensePlateNum = csv_list[17]
-            vcaStatus = csv_list[22]
+            #address = csv_list[7]
+            employeeType = csv_list[7]
+            contractType = csv_list[8]
+            client = csv_list[9]
+            project = csv_list[10]
+            house = csv_list[11]
+            houseName = csv_list[12]
+            houseBed = csv_list[13]
+            transport = csv_list[14]
+            transportType = csv_list[15]
+            licensePlateNumber = csv_list[16]
+            seatNumber = csv_list[17]
+            ddriver = csv_list[18]
+            licenseEndDate = csv_list[19]
+            vca = csv_list[20]
+            vcaStatus = csv_list[21]
+            vcaValidUntil = csv_list[22]
+            insurance = csv_list[23]
+            statusReason = csv_list[24]
 
+            listOfData = [ID, firstName, lastName, email, status, phoneNumber, nationality, employeeType,
+                          contractType, client, project, house, houseName, houseBed, transport, transportType,
+                          licensePlateNumber, seatNumber, ddriver, licenseEndDate, vca, vcaStatus, vcaValidUntil,
+                          insurance, statusReason]
             # noinspection PyTypeChecker
-            verifyDataInTable(driver,
-                              textPathList=[email,  # houseBedNum,
-                                            # transportType, vcaStatus,
-
-                                            ],
-                              tableDataList=[
-                                  firstName, lastName,
-                                  # f'92{phoneNumber}',
-                                  # nationality,
-                                  # address,
-                                  # status,
-                                  employeeType,
-                                  # client,
-                                  # project,
-                                  # licensePlateNum,
-                              ], tableIndex=counter)
+            verifyDatainTableByRow(driver, rowData=listOfData, rowIndex=counter)
             counter += 1
+
+

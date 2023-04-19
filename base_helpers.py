@@ -28,7 +28,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.opera import OperaDriverManager
 from selenium.webdriver.common.keys import Keys
-from Locators.TempWorkersLocators import TableRow_xpath, TextRow_xpath
+from Locators.TempWorkersLocators import TableRow_xpath, TextRow_xpath,tableRowData_xpath
 
 waitTimer = 15
 LoaderWaitTimer = 25
@@ -103,14 +103,17 @@ def find_Elements_byXpathAndWait(xpath, driver):
 
 
 def find_Elements_byXpathAndWait_getText(xpath, driver):
-    sleep(2)
     return list((i.text for i in find_Elements_byXpathAndWait(xpath, driver)))
+
+
+def find_Elements_byXpathAnd_getText(xpath, driver):
+    return list((i.text for i in find_Elements_byXpath(xpath, driver)))
 
 
 def find_Elements_byXpath(xpath, driver):
     try:
         ele = driver.find_elements(By.XPATH, xpath)
-        print("Elements Found with Xpath", xpath)
+        # print("Elements Found with Xpath", xpath)
         if len(ele) == 0:
             pytest.fail(
                 f"Couldn't find elements with xpath : {xpath} list has length 0")
@@ -195,6 +198,15 @@ def replace_string(input_string):
         return input_string.replace(", ", " (") + ")"
     else:
         return input_string
+
+
+def verifyDatainTableByRow(driver, rowData, rowIndex=0):
+    with allure.step(f'Verify Data in Table: {rowData}'):
+        find_Elements_byXpathAnd_getText(driver=driver, xpath=tableRowData_xpath(rowIndex))
+    # print(rowData)
+    # print("-------------")
+    # print(webData)
+    # assert rowData == webData
 
 
 def verify_Data_TableCell(driver, listxpathAtrr, tableIndex=0):

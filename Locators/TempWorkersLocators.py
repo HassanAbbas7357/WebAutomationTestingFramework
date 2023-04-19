@@ -98,9 +98,13 @@ sortTableByID_xpath = '//th//span[@class="ant-table-column-title" and text()="ID
 
 TableRow_xpath = lambda title, index=0: f'(//tbody[@class="ant-table-tbody"]//tr[@class="ant-table-row ' \
                                         f'ant-table-row-level-0"])[{index + 1}]//td[@title="{title}"]'
-TextRow_xpath = lambda text,index=0: f'(//tbody[@class="ant-table-tbody"]//tr[@class="ant-table-row ' \
-                                     f'ant-table-row-level-0"])[{index+1}]' \
-                     f'//td[text()="{text}"]'
+TextRow_xpath = lambda text, index=0: f'(//tbody[@class="ant-table-tbody"]//tr[@class="ant-table-row ' \
+                                      f'ant-table-row-level-0"])[{index + 1}]' \
+                                      f'//td[text()="{text}"]'
+
+tableRowData_xpath = lambda index=0: f'(//tbody[@class="ant-table-tbody"]//tr[@class="ant-table-row ' \
+                                     f'ant-table-row-level-0"])[{index + 1}]//td[not(.//label[' \
+                                     f'@class="ant-radio-wrapper"])]'
 
 nextPage = '//li[@title="Next Page"]'
 # MainPage Elements

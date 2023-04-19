@@ -149,7 +149,7 @@ def driver(request):
                     reason="Please provide a browser name to initiate tests")
 
     driver.implicitly_wait(7)
-    driver.maximize_window()
+    driver.set_window_size(1920, 1080)
     yield driver
     # sleep(180)
     driver.close()

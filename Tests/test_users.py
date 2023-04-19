@@ -20,6 +20,7 @@ def test_UsersScreenNavigation(driver):
         scroll_into_element(UsersMainLink_xpath,driver)
         click_on_element_js(UsersMainLink_xpath, driver)
     with allure.step('And User Should see "active-user" in the url'):
+        print(driver.current_url)
         assert UsersUrl in driver.current_url
 
 

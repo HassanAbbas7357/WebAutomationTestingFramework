@@ -18,7 +18,7 @@ def test_UsersScreenNavigation(driver):
     UsersUrl = 'active-user'
     with allure.step('Then User clicks "Users" button on "Homepage" screen'):
         scroll_into_element(UsersMainLink_xpath,driver)
-        find_byXpath(UsersMainLink_xpath, driver).click()
+        click_on_element_js(UsersMainLink_xpath, driver)
     with allure.step('And User Should see "active-user" in the url'):
         assert UsersUrl in driver.current_url
 

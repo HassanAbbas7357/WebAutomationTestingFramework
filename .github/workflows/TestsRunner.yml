@@ -41,7 +41,7 @@ jobs:
 
       
       - name: Running Selenium Tests
-        run:  pytest --alluredir=allure-results --browser CHROME --headless 1 --reruns 2 -n auto
+        run:  pytest --alluredir=allure-results --browser CHROME --headless 1 --reruns 2 -n auto -v -s
         continue-on-error: true
 
       - name: Get Allure history

@@ -1,0 +1,66 @@
+CURRENTWORKINGDIRECTORY : /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework
+Path Doesn't Exists: /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+False
+FileDownloadDIRECTORY :  /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+CHROME
+Element Found with Xpath //input[@placeholder="Enter Email"]
+Element Found with Xpath //input[@placeholder="Enter Password"]
+Element Found with Xpath //button[text()="Sign in"]
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+scrolling to //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Temporary Workers"]/parent::li
+Element Found with Xpath //table
+scrolling to //table
+waiting for loader to disappear
+loader disappeared
+Element Found with Xpath //th//span[@class="ant-table-column-title" and text()="ID"]/parent::div
+Element Found with Xpath //th//span[@class="ant-table-column-title" and text()="ID"]/parent::div
+Element Found with Xpath (//tbody[@class="ant-table-tbody"]//tr[@class="ant-table-row ant-table-row-level-0"])[1]//input[@type="radio"]
+Element Found with Xpath //a[text()="Delete"]
+Element Found with Xpath //div[@class="ant-modal-content"]//button//span[text()="Yes"]/parent::button
+CURRENTWORKINGDIRECTORY : /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework
+Path Doesn't Exists: /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+False
+FileDownloadDIRECTORY :  /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+CHROME
+Element Found with Xpath //input[@placeholder="Enter Email"]
+Element Found with Xpath //input[@placeholder="Enter Password"]
+Element Found with Xpath //button[text()="Sign in"]
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+scrolling to //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Temporary Workers"]/parent::li
+Element Found with Xpath //table
+scrolling to //table
+waiting for loader to disappear
+loader disappeared
+Element Found with Xpath //th//span[@class="ant-table-column-title" and text()="ID"]/parent::div
+Element Found with Xpath //th//span[@class="ant-table-column-title" and text()="ID"]/parent::div
+Element Found with Xpath (//tbody[@class="ant-table-tbody"]//tr[@class="ant-table-row ant-table-row-level-0"])[1]//input[@type="radio"]
+Element Found with Xpath //a[text()="Delete"]
+Element Found with Xpath //div[@class="ant-modal-content"]//button//span[text()="Yes"]/parent::button
+CURRENTWORKINGDIRECTORY : /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework
+Path Doesn't Exists: /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+False
+FileDownloadDIRECTORY :  /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+CHROME
+Element Found with Xpath //input[@placeholder="Enter Email"]
+Element Found with Xpath //input[@placeholder="Enter Password"]
+Element Found with Xpath //button[text()="Sign in"]
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+scrolling to //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Temporary Workers"]/parent::li
+Element Found with Xpath //table
+scrolling to //table
+waiting for loader to disappear
+loader disappeared
+Element Found with Xpath //th//span[@class="ant-table-column-title" and text()="ID"]/parent::div
+Element Found with Xpath //th//span[@class="ant-table-column-title" and text()="ID"]/parent::div
+Element Found with Xpath (//tbody[@class="ant-table-tbody"]//tr[@class="ant-table-row ant-table-row-level-0"])[1]//input[@type="radio"]
+Element Found with Xpath //a[text()="Delete"]
+Element Found with Xpath //div[@class="ant-modal-content"]//button//span[text()="Yes"]/parent::button

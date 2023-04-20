@@ -1,0 +1,66 @@
+CURRENTWORKINGDIRECTORY : /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework
+Path Doesn't Exists: /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+False
+FileDownloadDIRECTORY :  /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+CHROME
+Element Found with Xpath //input[@placeholder="Enter Email"]
+Element Found with Xpath //input[@placeholder="Enter Password"]
+Element Found with Xpath //button[text()="Sign in"]
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+scrolling to //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Users"]/parent::li
+scrolling to //a[text()="Users"]/parent::li
+Element Found with Xpath //a[text()="Users"]/parent::li
+http://52.70.226.96:85/active-user
+Element Found with Xpath //a[text()="Export"]
+waiting for loader to disappear
+loader disappeared
+Element Found with Xpath //a[text()="Export"]
+Downloading the file now
+Element Found with Xpath //a[text()="Export"]
+CURRENTWORKINGDIRECTORY : /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework
+Path Doesn't Exists: /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+False
+FileDownloadDIRECTORY :  /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+CHROME
+Element Found with Xpath //input[@placeholder="Enter Email"]
+Element Found with Xpath //input[@placeholder="Enter Password"]
+Element Found with Xpath //button[text()="Sign in"]
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+scrolling to //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Users"]/parent::li
+scrolling to //a[text()="Users"]/parent::li
+Element Found with Xpath //a[text()="Users"]/parent::li
+http://52.70.226.96:85/active-user
+Element Found with Xpath //a[text()="Export"]
+waiting for loader to disappear
+loader disappeared
+Element Found with Xpath //a[text()="Export"]
+Downloading the file now
+Element Found with Xpath //a[text()="Export"]
+CURRENTWORKINGDIRECTORY : /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework
+Path Doesn't Exists: /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+False
+FileDownloadDIRECTORY :  /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+CHROME
+Element Found with Xpath //input[@placeholder="Enter Email"]
+Element Found with Xpath //input[@placeholder="Enter Password"]
+Element Found with Xpath //button[text()="Sign in"]
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+scrolling to //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Dashboard"]/parent::li
+Element Found with Xpath //a[text()="Users"]/parent::li
+scrolling to //a[text()="Users"]/parent::li
+Element Found with Xpath //a[text()="Users"]/parent::li
+http://52.70.226.96:85/active-user
+Element Found with Xpath //a[text()="Export"]
+waiting for loader to disappear
+loader disappeared
+Element Found with Xpath //a[text()="Export"]
+Downloading the file now
+Element Found with Xpath //a[text()="Export"]

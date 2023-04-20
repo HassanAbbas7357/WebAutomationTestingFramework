@@ -1,0 +1,14 @@
+CURRENTWORKINGDIRECTORY : /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework
+Path Doesn't Exists: /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+False
+FileDownloadDIRECTORY :  /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+CHROME
+Element Found with Xpath //button[text()="Sign in"]
+Element Found with Xpath //div[text()="Please Enter Your Email!"]
+Element Found with Xpath //div[text()="Please Enter Your Email!"]
+scrolling to //div[text()="Please Enter Your Email!"]
+Element Found with Xpath //div[text()="Please Enter Your Email!"]
+Element Found with Xpath //div[text()="Please Enter Your Password!"]
+Element Found with Xpath //div[text()="Please Enter Your Password!"]
+scrolling to //div[text()="Please Enter Your Password!"]
+Element Found with Xpath //div[text()="Please Enter Your Password!"]

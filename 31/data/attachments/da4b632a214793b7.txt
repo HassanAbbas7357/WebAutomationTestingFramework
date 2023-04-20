@@ -1,0 +1,10 @@
+CURRENTWORKINGDIRECTORY : /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework
+Path Doesn't Exists: /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+False
+FileDownloadDIRECTORY :  /home/runner/work/WebAutomationTestingFramework/WebAutomationTestingFramework/Downloads/
+CHROME
+Element Found with Xpath //input[@placeholder="Enter Email"]
+Element Found with Xpath //div[text()="The input is not valid E-mail!"]
+Element Found with Xpath //div[text()="The input is not valid E-mail!"]
+scrolling to //div[text()="The input is not valid E-mail!"]
+Element Found with Xpath //div[text()="The input is not valid E-mail!"]

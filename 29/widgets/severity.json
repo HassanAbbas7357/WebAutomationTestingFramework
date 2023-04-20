@@ -1,0 +1,1 @@
+[{"uid":"5a3e7eafd518995","name":"test_TemporaryWorkerDeleteLast","time":{"start":1681970056924,"stop":1681970076972,"duration":20048},"status":"broken","severity":"normal"},{"uid":"f1a7b9bf8c21446a","name":"test_UsersCheckExportButtonDownloadsCSVFile","time":{"start":1681970075577,"stop":1681970092119,"duration":16542},"status":"failed","severity":"normal"}]

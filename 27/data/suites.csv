@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Apr 20 05:31:29 GMT 2023","Thu Apr 20 05:31:45 GMT 2023","16209","Tests","test_users","","","","test_UsersCheckExportButtonDownloadsCSVFile",""
+"passed","Thu Apr 20 05:31:53 GMT 2023","Thu Apr 20 05:31:55 GMT 2023","2419","Tests","test_users","","","","test_UserCheckNecessaryButtonsVisible",""
+"passed","Thu Apr 20 05:30:05 GMT 2023","Thu Apr 20 05:30:22 GMT 2023","16334","Tests","test_temprory_worker","","","","test_TemporaryWorkerDeleteLast",""
+"passed","Thu Apr 20 05:30:53 GMT 2023","Thu Apr 20 05:31:08 GMT 2023","14656","Tests","test_temprory_worker","","","","test_TemporaryWorkerDeleteFirst",""
+"passed","Thu Apr 20 05:31:09 GMT 2023","Thu Apr 20 05:31:28 GMT 2023","19687","Tests","test_temprory_worker","","","","test_TemporaryWorkerCheckExportButtonDownloadsCSVFile",""
+"passed","Thu Apr 20 05:31:46 GMT 2023","Thu Apr 20 05:31:48 GMT 2023","1938","Tests","test_temprory_worker","","","","test_TemporaryWorkerCheckNecessaryButtonsClickAble",""
+"passed","Thu Apr 20 05:31:49 GMT 2023","Thu Apr 20 05:31:52 GMT 2023","2279","Tests","test_users","","","","test_UserCheckNecessaryButtonsClickAble",""

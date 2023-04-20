@@ -158,21 +158,21 @@ def driver(request):
     driver.quit()
 
 
-# @pytest.fixture(scope='session', autouse=True)
-# def clearDownloads():
-#     yield
-#     # Will be executed after the last test
-#     downloadsPath = os.getcwd() + '/Downloads/'
-#     files = os.listdir(downloadsPath)
-#     # deleting all files in the downloads folder
-#     for file_name in files:
-#         file_path = os.path.join(downloadsPath, file_name)
-#         try:
-#             if os.path.isfile(file_path):
-#                 os.remove(file_path)
-#                 print(f"Deleted {file_path}")
-#         except Exception as e:
-#             print(f"Error deleting {file_path}: {e}")
+@pytest.fixture(scope='function', autouse=True)
+def clearDownloads():
+    yield
+    # Will be executed after the last test
+    downloadsPath = os.getcwd() + '/Downloads/'
+    files = os.listdir(downloadsPath)
+    # deleting all files in the downloads folder
+    for file_name in files:
+        file_path = os.path.join(downloadsPath, file_name)
+        try:
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+                print(f"Deleted {file_path}")
+        except Exception as e:
+            print(f"Error deleting {file_path}: {e}")
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)

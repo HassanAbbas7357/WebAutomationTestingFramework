@@ -82,7 +82,7 @@ def driver(request):
         print("Path Exists : ", downloadsPath)
     else:
         print("Path Doesn't Exists:", downloadsPath)
-        os.mkdir(downloadsPath)
+        # os.mkdir(downloadsPath)
         print(os.path.exists(downloadsPath))
     print("FileDownloadDIRECTORY : ", downloadsPath)
     print(request.config.option.browser)

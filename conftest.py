@@ -7,7 +7,8 @@ from base_helpers import get_randomEmail
 
 
 def pytest_configure(config):
-    config.addinivalue_line("markers", "regression: mark test as a regression test")
+    config.addinivalue_line(
+        "markers", "regression: mark test as a regression test")
     config.addinivalue_line("markers", "smoke: mark test as a smoke test")
     config.addinivalue_line("markers", "sanity: mark test as a sanity test")
 
@@ -82,7 +83,7 @@ def driver(request):
         print("Path Exists : ", downloadsPath)
     else:
         print("Path Doesn't Exists:", downloadsPath)
-        os.mkdir(downloadsPath)
+        # os.mkdir(downloadsPath)
         print(os.path.exists(downloadsPath))
     print("FileDownloadDIRECTORY : ", downloadsPath)
     print(request.config.option.browser)
@@ -98,7 +99,7 @@ def driver(request):
         chrome_options = Chrome_options()
         chrome_options.add_argument(headless)
         chrome_options.add_argument('--log-level=3')
-        #chrome_options.add_argument("start-maximized")
+        # chrome_options.add_argument("start-maximized")
         chrome_options.add_argument('--start-maximized')
         chrome_options.add_experimental_option("prefs", {
             "profile.default_content_setting_values.notifications": 1,
@@ -128,9 +129,11 @@ def driver(request):
         firefox_options = Firefox_options()
         # setup for downloadable files
         firefox_options.set_preference("browser.download.folderList", 2)
-        firefox_options.set_preference("browser.download.manager.showWhenStarting", False)
+        firefox_options.set_preference(
+            "browser.download.manager.showWhenStarting", False)
         firefox_options.set_preference("browser.download.dir", downloadsPath)
-        firefox_options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/pdf")
+        firefox_options.set_preference(
+            "browser.helperApps.neverAsk.saveToDisk", "application/pdf")
 
         firefox_options.add_argument(headless)
         firefox_options.add_argument('--log-level=3')
